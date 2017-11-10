@@ -5,8 +5,8 @@ import './index.css';
 class Square extends React.Component {
   render() {
     return (
-      <button className="square">
-        /* {TO DO} */
+      <button className="square" onClick={() => alert('hello')}>
+        {this.props.value}
       </button>
     );
   }
@@ -14,13 +14,13 @@ class Square extends React.Component {
 
 class Board extends React.Component {
   renderSquare(i) {
-    return <Square/>;
+    return <Square value={i} />;
   }
 
   render() {
-    const status = "Next player: X";
+    const status = 'Next player: X';
 
-    return(
+    return (
       <div>
         <div className="status">{status}</div>
         <div className="board-row">
@@ -51,13 +51,15 @@ class Game extends React.Component {
           <Board />
         </div>
         <div className="game-info">
-          /* <div>{status}</div> */
-          /* <ol>{todo}</ol> */
+          <div>{/* status */}</div>
+          <ol>{/* TODO */}</ol>
         </div>
       </div>
     );
   }
 }
+
+// ========================================
 
 ReactDOM.render(
   <Game />,
